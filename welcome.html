@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bg.css">
+    <script src="script..js" defer></script>
+    <title>Your Choco Baby</title>
+</head>
+<body>
+    <div class="text" style="top: -50px;">
+        <h1 id="lyrics"></h1>
+        <a class='button1' href='index.html' style='text-decoration: none; margin-top: 20px;'>
+            Continue
+            <svg fill="currentColor" viewBox="0 0 24 24" class="icon">
+                <path clip-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z" fill-rule="evenodd"></path>
+            </svg>
+        </a>
+    </div>
+    <audio id="audio" controls=autoplay style= "display: none;">
+        <source src="Downloads/audio.mp3" type="audio/mpeg">
+    </audio>
+    <div class="container">
+        <div class="rains" id="rains-container">
+        </div>
+    </div>
+    
+    <script>
+        function createRaindrops() {
+            const container = document.getElementById("rains-container");
+            const numRaindrops = 60; 
+            
+            for (let i = 0; i < numRaindrops; i++) {
+                const span = document.createElement("span");
+                span.style.setProperty("--i", Math.floor(Math.random() * 20) + 1); 
+                container.appendChild(span);
+            }
+        }
+        createRaindrops(); 
+    </script>
+</body>
+</html>
